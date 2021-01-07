@@ -20,4 +20,19 @@ func main() {
 	matrix[2][0] = 21
 	fmt.Println(matrix)
 
+	//Copy
+
+	slice := []int{1, 2, 3, 4, 5, 6}
+	slice_copy := make([]int, len(slice), cap(slice)*2)
+
+	/* Is very important to declare the length of the array that you are copied, is better if you write len(array).
+	About the capacity sometimes is a good practice to declare cap(array) * 2  */
+
+	fmt.Println(slice)
+	fmt.Println(slice_copy)
+
+	copy(slice_copy, slice)
+
+	fmt.Println(slice)
+	fmt.Println(slice_copy)
 }

@@ -9,8 +9,8 @@ func main() {
 //Commands that you need to run this program, write this in your terminal
 
 //The best form to run this program
-//go run hello_world.go
+//go run program_name.go
 
 //Other way
-//go build name_program.go
-//./name_program
+//go build program_name.go
+//./program_name
