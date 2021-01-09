@@ -7,6 +7,16 @@ type User struct {
 	name, last_name string
 }
 
+//Method of the struct
+func (user User) full_name() string {
+	return user.name + " " + user.last_name
+}
+
+//Use pointer to modify the object
+func (this *User) set_name(n string) {
+	this.name = n
+}
+
 func main() {
 	var Gino User
 
@@ -37,4 +47,7 @@ func main() {
 	leyva.last_name = "Leyva Calle"
 
 	fmt.Println(leyva.age, leyva.name, leyva.last_name)
+	fmt.Println(leyva.full_name())
+	leyva.set_name("Pepito")
+	fmt.Println(leyva.full_name())
 }
