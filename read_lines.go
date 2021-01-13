@@ -7,15 +7,19 @@ import (
 )
 
 func read_lines_file() bool {
-	file, err := os.Open("./file.txt")
+	file, err := os.Open("./filex.txt")
 
 	defer func() {
 		file.Close()
 		fmt.Println("Defer")
+
+		r := recover()
+		fmt.Println(r)
+
 	}() //-> this function executes after the function returns something
 
 	if err != nil {
-		fmt.Printf("There was an error trying to open the file")
+		panic(err)
 	}
 
 	scanner := bufio.NewScanner(file)
@@ -37,7 +41,11 @@ func read_lines_file() bool {
 	return true
 }
 
-func main() {
+func execute_read_file() {
 	execution := read_lines_file()
 	fmt.Println(execution)
+}
+
+func main() {
+	execute_read_file()
 }
